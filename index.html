@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Plant Nursery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Online Plant Nursery</h1>
+  </header>
+  <nav>
+    <button onclick="filterPlants('all')">All</button>
+    <button onclick="filterPlants('indoor')">Indoor</button>
+    <button onclick="filterPlants('outdoor')">Outdoor</button>
+    <button onclick="filterPlants('succulents')">Succulents</button>
+  </nav>
+  <div class="container" id="plantContainer"></div>
+
+  <div class="form-container">
+    <h2>Sell Your Plant</h2>
+    <input type="text" id="name" placeholder="Plant Name" required />
+    <input type="text" id="category" placeholder="Category (indoor/outdoor/succulents)" required />
+    <textarea id="description" placeholder="Description" required></textarea>
+    <input type="number" id="price" placeholder="Price" required />
+    <button onclick="addPlant()">Add Plant</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Buy a Plant</h2>
+    <input type="text" id="customerName" placeholder="Your Name" required />
+    <input type="text" id="customerEmail" placeholder="Your Email" required />
+    <select id="plantSelect" onchange="updatePrice()">
+      <option value="">-- Select a Plant --</option>
+    </select>
+    <div id="selectedPrice"></div>
+    <button onclick="generateOrderSlip()">Place Order</button>
+  </div>
+
+  <div class="order-slip" id="orderSlip"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
